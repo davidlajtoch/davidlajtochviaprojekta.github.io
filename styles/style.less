@@ -39,8 +39,25 @@ body {
     }
 
     .logo {
+        margin-bottom: -5px;
         font-family: 'Megrim', cursive;
         cursor: default;
+
+        .logo_detail {
+            font-family: 'Overpass', sans-serif;
+            position: relative;
+            top: -20px;
+            margin-bottom: -40px;
+            font-size: 12px;
+            opacity: 0;
+            transition: opacity ease-in-out 1500ms;
+        }
+    }
+
+    .logo:hover {
+        .logo_detail {
+            opacity: 1;
+        }
     }
 
     .container {
@@ -50,6 +67,7 @@ body {
 
         .searchbar_container {
 
+            margin-top: -20px;
             margin-bottom: 15px;
 
             .searchbar {

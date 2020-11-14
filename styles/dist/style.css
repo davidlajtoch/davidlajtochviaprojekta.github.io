@@ -23,8 +23,21 @@ body .inline {
   top: 5px;
 }
 body .logo {
+  margin-bottom: -5px;
   font-family: 'Megrim', cursive;
   cursor: default;
+}
+body .logo .logo_detail {
+  font-family: 'Overpass', sans-serif;
+  position: relative;
+  top: -20px;
+  margin-bottom: -40px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity ease-in-out 1500ms;
+}
+body .logo:hover .logo_detail {
+  opacity: 1;
 }
 body .container {
   width: 70%;
@@ -32,6 +45,7 @@ body .container {
   text-align: center;
 }
 body .container .searchbar_container {
+  margin-top: -20px;
   margin-bottom: 15px;
 }
 body .container .searchbar_container .searchbar {
