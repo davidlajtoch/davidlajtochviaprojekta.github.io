@@ -1,0 +1,146 @@
+body {
+  background-color: #2c323a;
+  font-family: 'Overpass', sans-serif;
+  color: #a9b0bc;
+}
+body .highlight_purple {
+  color: #7c4dff;
+}
+body .highlight_red {
+  color: #ff4081;
+}
+body .highlight_orange {
+  color: #ff9100;
+}
+body .highlight_yellow {
+  color: #ffea00;
+}
+body .highlight_green {
+  color: #00e676;
+}
+body .inline {
+  position: relative;
+  top: 5px;
+}
+body .logo {
+  font-family: 'Megrim', cursive;
+  cursor: default;
+}
+body .container {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+body .container .searchbar_container {
+  margin-bottom: 15px;
+}
+body .container .searchbar_container .searchbar {
+  position: relative;
+  left: 40px;
+  font-family: 'Overpass', sans-serif;
+  width: calc(50% - 43px);
+  height: 30px;
+  padding-left: 8px;
+  padding-right: 75px;
+  color: #a9b0bc;
+  background-color: #21252b;
+  border: none;
+  border-bottom: 1px solid #21252b;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  outline: none;
+  transition: 150ms;
+}
+body .container .searchbar_container .searchbar:focus {
+  border-bottom: 1px solid #7c4dff;
+  box-shadow: 0 10px 20px rgba(124, 77, 255, 0.16), 0 3px 6px rgba(124, 77, 255, 0.23);
+}
+body .container .searchbar_container button {
+  width: 37px;
+  position: relative;
+  top: 8px;
+  background: none;
+  border: none;
+  color: #7c4dff;
+  cursor: pointer;
+  outline: none;
+  transition: ease-in-out 150ms;
+}
+body .container .searchbar_container button:hover {
+  text-shadow: 0px 0px 20px #7c4dff;
+}
+body .container .searchbar_container .search_button {
+  right: 0px;
+}
+body .container .searchbar_container .clear_button {
+  right: 77px;
+}
+body .container .list_header {
+  width: 100%;
+  text-align: left;
+}
+body .container .list {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+body .container .list .item {
+  background-color: #21252b;
+  display: flex;
+  flex-direction: row;
+  height: 64px;
+  line-height: 64px;
+  padding: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 3px;
+  transition: ease-in-out 150ms;
+}
+body .container .list .item .rank {
+  color: #7c4dff;
+  font-size: 30px;
+  flex: 5%;
+  transition: text-shadow ease-in-out 150ms;
+}
+body .container .list .item .title {
+  flex: 30%;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body .container .list .item .score {
+  flex: 5%;
+}
+body .container .list .item .type {
+  flex: 10%;
+}
+body .container .list .item .run_date {
+  flex: 15%;
+}
+body .container .list .item .episodes {
+  flex: 10%;
+}
+body .container .list .item .image {
+  flex: 15%;
+  max-width: 100%;
+  overflow: hidden;
+}
+body .container .list .item .image img {
+  height: 100%;
+  border-radius: 3px;
+}
+body .container .list .item:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  line-height: 124px;
+  height: 124px;
+}
+body .container .list .item:hover .rank {
+  text-shadow: 0px 0px 15px #7c4dff;
+}
+@media only screen and (max-width: 600px) {
+  body .container {
+    width: 96%;
+  }
+}

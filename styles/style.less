@@ -1,0 +1,191 @@
+@color_main_bg: #2c323a;
+@color_dark_bg: #21252b;
+@color_light_bg: #373f49;
+@color_main_font: #a9b0bc;
+@color_highlight_purple: #7c4dff;
+@color_highlight_red: #ff4081;
+@color_highlight_orange: #ff9100;
+@color_highlight_yellow: #ffea00;
+@color_highlight_green: #00e676;
+
+body {
+    background-color: @color_main_bg;
+    font-family: 'Overpass', sans-serif;
+    color: @color_main_font;
+
+    .highlight_purple {
+        color: @color_highlight_purple;
+    }
+
+    .highlight_red {
+        color: @color_highlight_red;
+    }
+
+    .highlight_orange {
+        color: @color_highlight_orange;
+    }
+
+    .highlight_yellow {
+        color: @color_highlight_yellow;
+    }
+
+    .highlight_green {
+        color: @color_highlight_green;
+    }
+
+    .inline {
+        position: relative;
+        top: 5px;
+    }
+
+    .logo {
+        font-family: 'Megrim', cursive;
+        cursor: default;
+    }
+
+    .container {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+
+        .searchbar_container {
+
+            margin-bottom: 15px;
+
+            .searchbar {
+                position: relative;
+                left: 40px;
+                font-family: 'Overpass', sans-serif;
+                width: calc(50% - 43px);
+                height: 30px;
+                padding-left: 8px;
+                padding-right: 75px;
+                color: @color_main_font;
+                background-color: @color_dark_bg;
+                border: none;
+                border-bottom: 1px solid @color_dark_bg;
+                border-top-left-radius: 3px;
+                border-top-right-radius: 3px;
+                outline: none;
+                transition: 150ms;
+            }
+
+            .searchbar:focus {
+                border-bottom: 1px solid @color_highlight_purple;
+                box-shadow: 0 10px 20px rgba(124, 77, 255, 0.16), 0 3px 6px rgba(124, 77, 255, 0.23);
+            }
+
+            button {
+                width: 37px;
+                position: relative;
+                top: 8px;
+                background: none;
+                border: none;
+                color: @color_highlight_purple;
+                cursor: pointer;
+                outline: none;
+                transition: ease-in-out 150ms;
+            }
+
+            button:hover {
+                text-shadow: 0px 0px 20px @color_highlight_purple;
+            }
+
+            .search_button {
+                right: 0px;
+            }
+
+            .clear_button {
+                right: 77px;
+            }
+        }
+
+        .list_header {
+            width: 100%;
+            text-align: left;
+        }
+
+        .list {
+            display: flex;
+            flex-direction: column;
+            margin: 0 auto;
+
+            .item {
+                background-color: @color_dark_bg;
+                display: flex;
+                flex-direction: row;
+                height: 64px;
+                line-height: 64px;
+                padding: 8px;
+                margin-top: 15px;
+                cursor: pointer;
+                box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+                border-radius: 3px;
+                transition: ease-in-out 150ms;
+
+                .rank {
+                    color: @color_highlight_purple;
+                    font-size: 30px;
+                    flex: 5%;
+                    transition: text-shadow ease-in-out 150ms;
+                }
+
+                .title {
+                    flex: 30%;
+                    text-align: left;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+
+                .score {
+                    flex: 5%;
+                }
+
+                .type {
+                    flex: 10%;
+                }
+
+                .run_date {
+                    flex: 15%;
+                }
+
+                .episodes {
+                    flex: 10%;
+                }
+
+                .image {
+
+                    flex: 15%;
+                    max-width: 100%;
+                    overflow: hidden;
+
+                    img {
+                        height: 100%;
+                        border-radius: 3px;
+                    }
+                }
+            }
+
+            .item:hover {
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+                line-height: 124px;
+                height: 124px;
+
+                .rank {
+                    text-shadow: 0px 0px 15px @color_highlight_purple;
+                }
+            }
+
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .container {
+            width: 96%;
+        }
+
+
+    }
+
+}
