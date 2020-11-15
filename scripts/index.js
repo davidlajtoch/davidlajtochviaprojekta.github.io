@@ -76,9 +76,9 @@ $(document).ready(function () {
         showTop();
     });
 
-    $("#search_button").click(function () {
+    function search() {
 
-        disableButton(this);
+        disableButton($('#search_button'));
 
         let search_value = $('#searchbar').val();
         if (search_value.length < 3) {
@@ -122,13 +122,14 @@ $(document).ready(function () {
             });
             $('#list').html(sb);
         }
-    });
+    }
+
+
 
     $('#list').on('click', '.anime_button', function () {
 
         $('#content_header').css('display', 'none');
 
-        let index = $(this).find('.rank')[0].innerText - 1;
         let title = $(this).find('.title')[0].innerHTML;
         let score = $(this).find('.score')[0].innerText.substring(5);
         let type = $(this).find('.type')[0].innerHTML;
@@ -137,12 +138,11 @@ $(document).ready(function () {
         let image = $(this).find('.image')[0].innerHTML;
         let mal_id = $(this).find('.mal_id')[0].innerText;
 
-        console.log(index, title, score, type, run_date, image, mal_id);
+        $('#searchbar').val(title);
 
         var config = new Config();
         var client = new Client(config);
         var response = client.getAnimeEpisodes(mal_id);
-        console.log(response);
 
         let sb = '';
 
@@ -296,6 +296,21 @@ $(document).ready(function () {
         $('#anime').html(sb);
 
     });
+
+    $(document).on('keypress', function (e) {
+        if (e.which == 13) {
+
+            search($('#search_button'));
+            e.preventDefault();
+
+            setTimeout(function () {
+                e.preventDefault();
+                return false;
+            }, 2000);
+        }
+    });
+
+    $("#search_button").on('click', search);
 
     showTop();
 

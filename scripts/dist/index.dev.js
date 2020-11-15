@@ -62,8 +62,9 @@ $(document).ready(function () {
     disableButton(this);
     showTop();
   });
-  $("#search_button").click(function () {
-    disableButton(this);
+
+  function search() {
+    disableButton($('#search_button'));
     var search_value = $('#searchbar').val();
 
     if (search_value.length < 3) {
@@ -92,10 +93,10 @@ $(document).ready(function () {
       });
       $('#list').html(sb);
     }
-  });
+  }
+
   $('#list').on('click', '.anime_button', function () {
     $('#content_header').css('display', 'none');
-    var index = $(this).find('.rank')[0].innerText - 1;
     var title = $(this).find('.title')[0].innerHTML;
     var score = $(this).find('.score')[0].innerText.substring(5);
     var type = $(this).find('.type')[0].innerHTML;
@@ -103,11 +104,10 @@ $(document).ready(function () {
     var run_date = $(this).find('.run_date')[0].innerHTML;
     var image = $(this).find('.image')[0].innerHTML;
     var mal_id = $(this).find('.mal_id')[0].innerText;
-    console.log(index, title, score, type, run_date, image, mal_id);
+    $('#searchbar').val(title);
     var config = new Config();
     var client = new Client(config);
     var response = client.getAnimeEpisodes(mal_id);
-    console.log(response);
     var sb = '';
     sb += '<div class="title">' + title + '</div>' + '<div class="title_detail"><span class="' + getScoreColor(Number(score)) + '">' + '<i class="material-icons inline">grade</i>' + score + '</span>' + '<span class="highlight_purple"> / </span>' + type + '<span class="highlight_purple"> / </span>' + episodes + '<span class="highlight_purple"> / </span>' + run_date + '</div>' + '<div class="section1">' + '<div class="image">' + image + '</div>' + '<div class="episodes">';
 
@@ -185,5 +185,16 @@ $(document).ready(function () {
     $('#list').html('');
     $('#anime').html(sb);
   });
+  $(document).on('keypress', function (e) {
+    if (e.which == 13) {
+      search($('#search_button'));
+      e.preventDefault();
+      setTimeout(function () {
+        e.preventDefault();
+        return false;
+      }, 2000);
+    }
+  });
+  $("#search_button").on('click', search);
   showTop();
 });

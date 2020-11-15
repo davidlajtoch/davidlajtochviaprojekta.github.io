@@ -119,6 +119,8 @@ body .container .content .list .item {
   transition: ease-in-out 150ms;
 }
 body .container .content .list .item .rank {
+  position: relative;
+  top: 3px;
   color: #7c4dff;
   font-size: 30px;
   flex: 5%;
