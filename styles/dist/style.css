@@ -219,7 +219,7 @@ body .container .content .anime .section1 .episodes .episode {
   background-color: #21252b;
   padding-top: 8px;
   padding-bottom: 8px;
-  margin-right: 20px;
+  margin-right: 10px;
   border-radius: 3px;
   margin-bottom: 10px;
 }
@@ -317,6 +317,22 @@ body .container .content .anime .section2 .chart .content_status {
   body .section2 {
     flex-direction: column;
   }
+}
+::-webkit-scrollbar {
+  width: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #21252b;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: #5635b0;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7c4dff;
 }
 .lds-ellipsis {
   display: inline-block;

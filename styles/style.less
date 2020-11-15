@@ -4,6 +4,7 @@
 @color_light_bg: #373f49;
 @color_main_font: #a9b0bc;
 @color_dark_font: #5a6272;
+@color_highlight_purple_dark: #5635b0;
 @color_highlight_purple: #7c4dff;
 @color_highlight_red: #ff4081;
 @color_highlight_orange: #ff9100;
@@ -274,7 +275,7 @@ body {
                             background-color: @color_dark_bg;
                             padding-top: 8px;
                             padding-bottom: 8px;
-                            margin-right: 20px;
+                            margin-right: 10px;
                             border-radius: 3px;
                             margin-bottom: 10px;
 
@@ -401,6 +402,27 @@ body {
 
     }
 
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: @color_dark_bg;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: @color_highlight_purple_dark;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: @color_highlight_purple;
 }
 
 
