@@ -13,7 +13,7 @@ $(document).ready(function () {
 
     function updateContentHeader(text) {
         $('#content_header').css('display', 'block');
-        $('#content_header').text(text);
+        $('#content_header').html(text);
     }
 
     function getScoreColor(score) {
@@ -38,7 +38,7 @@ $(document).ready(function () {
         var response = client.getTop();
         console.log(response);
 
-        updateContentHeader('Top results / popular right now');
+        updateContentHeader('Top results<span class="highlight_purple"> / </span>popular right now');
 
         let type;
         let start_date;
@@ -92,7 +92,7 @@ $(document).ready(function () {
             var response = client.getSearch(search_string);
             console.log(response);
 
-            updateContentHeader('Top results / ' + search_value);
+            updateContentHeader('Top results<span class="highlight_purple"> / </span>' + search_value);
 
             let type;
             let start_date;
