@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Megrim&family=Overpass&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
 </head>
 
 <body>
@@ -30,13 +31,16 @@
             <button class="clear_button" id="clear_button"><i class="material-icons">clear</i></button>
         </div>
 
-        <div class="list_header" id="list_header"></div>
+        <div class="content_header" id="content_header"></div>
 
-        <div id="list" class="list"></div>
+        <div class="content" id="content">
+            <div id="list" class="list"></div>
+            <div id="anime" class="anime">
+            </div>
 
-    </div>
-    <script src="./scripts/dist/api.dev.js" async defer></script>
-    <script src="./scripts/dist/index.dev.js" async defer></script>
+        </div>
+        <script src="./scripts/dist/api.dev.js" async defer></script>
+        <script src="./scripts/dist/index.dev.js" async defer></script>
 </body>
 
 </html>

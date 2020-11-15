@@ -18,6 +18,9 @@ body .highlight_yellow {
 body .highlight_green {
   color: #00e676;
 }
+body .hightlight_faded {
+  color: #5a6272;
+}
 body .inline {
   position: relative;
   top: 5px;
@@ -91,16 +94,18 @@ body .container .searchbar_container .search_button {
 body .container .searchbar_container .clear_button {
   right: 77px;
 }
-body .container .list_header {
+body .container .content_header {
   width: 100%;
   text-align: left;
 }
-body .container .list {
+body .container .content .list {
   display: flex;
   flex-direction: column;
   margin: 0 auto;
 }
-body .container .list .item {
+body .container .content .list .item {
+  text-decoration: none !important;
+  color: #a9b0bc;
   background-color: #21252b;
   display: flex;
   flex-direction: row;
@@ -113,50 +118,263 @@ body .container .list .item {
   border-radius: 3px;
   transition: ease-in-out 150ms;
 }
-body .container .list .item .rank {
+body .container .content .list .item .rank {
   color: #7c4dff;
   font-size: 30px;
   flex: 5%;
   transition: text-shadow ease-in-out 150ms;
 }
-body .container .list .item .title {
+body .container .content .list .item .title {
   flex: 30%;
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-body .container .list .item .score {
+body .container .content .list .item .score {
   flex: 5%;
 }
-body .container .list .item .type {
+body .container .content .list .item .type {
   flex: 10%;
 }
-body .container .list .item .run_date {
+body .container .content .list .item .run_date {
   flex: 15%;
 }
-body .container .list .item .episodes {
+body .container .content .list .item .episodes {
   flex: 10%;
 }
-body .container .list .item .image {
+body .container .content .list .item .image {
   flex: 15%;
   max-width: 100%;
   overflow: hidden;
 }
-body .container .list .item .image img {
+body .container .content .list .item .image img {
   height: 100%;
   border-radius: 3px;
 }
-body .container .list .item:hover {
+body .container .content .list .item:hover {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   line-height: 124px;
   height: 124px;
 }
-body .container .list .item:hover .rank {
+body .container .content .list .item:hover .rank {
   text-shadow: 0px 0px 15px #7c4dff;
 }
-@media only screen and (max-width: 600px) {
+body .container .content .anime {
+  margin: 0 auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+body .container .content .anime .title {
+  font-size: 32px;
+  text-align: left;
+}
+body .container .content .anime .title_detail {
+  margin-bottom: 15px;
+  text-align: left;
+}
+body .container .content .anime .section1 {
+  display: flex;
+  flex-direction: row;
+  height: 320px;
+  margin-bottom: 30px;
+  overflow: hidden;
+}
+body .container .content .anime .section1 .image {
+  height: 320px;
+  flex: 0 0 227px;
+  margin-right: 15px;
+  overflow: hidden;
+  border-radius: 5px;
+}
+body .container .content .anime .section1 .image img {
+  border-radius: 5px;
+  height: 100%;
+}
+body .container .content .anime .section1 .episodes {
+  flex: auto;
+  height: calc(100% - 10px);
+  position: relative;
+  padding-top: 10px;
+  padding-left: 10px;
+  overflow-y: scroll;
+  border-radius: 5px;
+  background-color: #262b33;
+}
+body .container .content .anime .section1 .episodes .content_status {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #5a6272;
+  text-align: center;
+}
+body .container .content .anime .section1 .episodes .episode {
+  display: flex;
+  flex-direction: row;
+  line-height: 100%;
+  background-color: #21252b;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  margin-right: 20px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+body .container .content .anime .section1 .episodes .episode .index {
+  line-height: 100%;
+  flex: 5%;
+  padding-right: 10px;
+  color: #7c4dff;
+}
+body .container .content .anime .section1 .episodes .episode .title {
+  font-size: 16px;
+  flex: 35%;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 10px;
+  text-overflow: ellipsis;
+}
+body .container .content .anime .section1 .episodes .episode .title_japanese {
+  flex: 20%;
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body .container .content .anime .section1 .episodes .episode .title_romanji {
+  flex: 20%;
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+body .container .content .anime .section1 .episodes .episode .aired {
+  flex: 10%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+@media only screen and (max-width: 850px) {
+  body .container .content .anime .section1 {
+    flex-direction: column;
+    height: 520px;
+  }
+  body .container .content .anime .section1 .image {
+    flex: 55%;
+  }
+  body .container .content .anime .section1 .episodes {
+    flex: 45%;
+  }
+  body .container .content .anime .title {
+    text-align: center;
+  }
+  body .container .content .anime .title_detail {
+    text-align: center;
+  }
+  body .container .content .anime .image {
+    margin-bottom: 20px;
+  }
+}
+body .container .content .anime .section2 {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+body .container .content .anime .section2 .chart {
+  display: inline-block;
+  position: relative;
+}
+body .container .content .anime .section2 .chart .content_status {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #5a6272;
+  text-align: center;
+}
+@media only screen and (max-width: 850px) {
+  body .container .content .anime .section2 {
+    display: flex;
+    flex-direction: column;
+  }
+  body .container .content .anime .section2 .chart {
+    width: 100% !important;
+    margin: 0 auto;
+  }
+}
+@media only screen and (max-width: 1500px) {
   body .container {
     width: 96%;
+  }
+  body .section1 {
+    flex-direction: column;
+  }
+  body .section2 {
+    flex-direction: column;
+  }
+}
+.lds-ellipsis {
+  display: inline-block;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #7c4dff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
   }
 }

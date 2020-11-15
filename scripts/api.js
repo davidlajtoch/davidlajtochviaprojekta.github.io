@@ -38,6 +38,18 @@ class Client {
         let request = new Request(url);
         return this.sendRequest(request);
     }
+
+    getAnimeStats(mal_id) {
+        let url = '/anime/' + mal_id + '/stats';
+        let request = new Request(url);
+        return this.sendRequest(request);
+    }
+
+    getAnimeEpisodes(mal_id) {
+        let url = '/anime/' + mal_id + '/episodes';
+        let request = new Request(url);
+        return this.sendRequest(request);
+    }
 }
 
 class Request {

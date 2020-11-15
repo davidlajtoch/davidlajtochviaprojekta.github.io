@@ -61,6 +61,20 @@ function () {
       var request = new Request(url);
       return this.sendRequest(request);
     }
+  }, {
+    key: "getAnimeStats",
+    value: function getAnimeStats(mal_id) {
+      var url = '/anime/' + mal_id + '/stats';
+      var request = new Request(url);
+      return this.sendRequest(request);
+    }
+  }, {
+    key: "getAnimeEpisodes",
+    value: function getAnimeEpisodes(mal_id) {
+      var url = '/anime/' + mal_id + '/episodes';
+      var request = new Request(url);
+      return this.sendRequest(request);
+    }
   }]);
 
   return Client;
