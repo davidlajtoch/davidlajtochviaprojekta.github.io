@@ -54,6 +54,7 @@ $(document).ready(function () {
       url = 'anime.html?mal_id=' + encodeURI(response.top[index].mal_id) + '&title=' + encodeURI(response.top[index].title);
       sb += '<a class="anime_button" style="text-decoration: none;">' + '<div class="item">' + '<div class="rank">' + response.top[index].rank + '</div>' + '<div class="title">' + response.top[index].title + '</div>' + '<div class="score ' + getScoreColor(response.top[index].score) + '"><i class="material-icons inline">grade</i>' + response.top[index].score + '</div>' + '<div class="type">' + type + '</div>' + '<div class="run_date">' + start_date + '</div>' + '<div class="episodes">' + episodes + ' episodes</div>' + '<div class="image"><img src="' + response.top[index].image_url + '"></div>' + '</div><div class="mal_id" style="display: none;">' + response.top[index].mal_id + '</div></a>';
     });
+    $('#anime').html('');
     $('#list').html(sb);
   }
 
@@ -91,6 +92,7 @@ $(document).ready(function () {
         url = 'anime.html?mal_id=' + encodeURI(response.results[index].mal_id) + '&title=' + encodeURI(response.results[index].title);
         sb += '<a class="anime_button" style="text-decoration: none;">' + '<div class="item">' + '<div class="rank">' + (index + 1) + '</div>' + '<div class="title">' + response.results[index].title + '</div>' + '<div class="score ' + getScoreColor(response.results[index].score) + '"><i class="material-icons inline">grade</i>' + response.results[index].score + '</div>' + '<div class="type">' + type + '</div>' + '<div class="run_date">' + start_date + ' - ' + end_date + '</div>' + '<div class="episodes">' + episodes + ' episodes</div>' + '<div class="image"><img src="' + response.results[index].image_url + '"></div>' + '</div><div class="mal_id" style="display: none;">' + response.results[index].mal_id + '</div></a>';
       });
+      $('#anime').html('');
       $('#list').html(sb);
     }
   }

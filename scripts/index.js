@@ -66,7 +66,7 @@ $(document).ready(function () {
                 '<div class="image"><img src="' + response.top[index].image_url + '"></div>' +
                 '</div><div class="mal_id" style="display: none;">' + response.top[index].mal_id + '</div></a>';
         });
-
+        $('#anime').html('');
         $('#list').html(sb);
     }
 
@@ -120,6 +120,7 @@ $(document).ready(function () {
                     '<div class="image"><img src="' + response.results[index].image_url + '"></div>' +
                     '</div><div class="mal_id" style="display: none;">' + response.results[index].mal_id + '</div></a>';
             });
+            $('#anime').html('');
             $('#list').html(sb);
         }
     }
